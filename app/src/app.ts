@@ -1,5 +1,7 @@
+import 'dotenv/config'
 import express from 'express'
 import cors from 'cors'
+import { sequelize } from 'services/database'
 
 class App {
     express: express.Application
@@ -18,7 +20,13 @@ class App {
     }
 
     private database(): void {
-        console.log('Missing database')
+        console.log(
+            sequelize
+                ? `Sequelize up at ${sequelize.getDialect()} -> ${
+                      sequelize.config.host
+                  }`
+                : 'Database not found'
+        )
     }
 
     private routes(): void {
