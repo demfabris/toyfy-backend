@@ -18,7 +18,7 @@
         "noImplicitReturns": true,
         "baseUrl": "./src",
         "paths": {
-            "*": ["*"]
+            "@/*": ["."]
         },
         "allowSyntheticDefaultImports": true,
         "esModuleInterop": true,
